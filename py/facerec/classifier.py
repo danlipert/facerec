@@ -3,6 +3,7 @@ from facerec.util import asRowMatrix
 import logging
 import numpy as np
 import operator as op
+import collections
 
 class AbstractClassifier(object):
     def compute(self,X,y):
@@ -69,7 +70,10 @@ class NearestNeighbor(AbstractClassifier):
         sorted_y = sorted_y[0:self.k]
         sorted_distances = sorted_distances[0:self.k]
         # Make a histogram of them:
-        hist = dict((key,val) for key, val in enumerate(np.bincount(sorted_y)) if val)
+        for key in enumerate(sorted_y):
+            print key
+        #hist = dict((key,val) for key, val in enumerate(np.bincount(sorted_y)) if val)
+        hist = dict((key,val) for key, val in enumerate(collections.Counter(sorted_y)) if val)
         # And get the bin with the maximum frequency:
         predicted_label = max(hist.iteritems(), key=op.itemgetter(1))[0]
         # A classifier should output a list with the label as first item and
