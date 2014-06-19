@@ -1,3 +1,7 @@
+
+## Modified fork from bytefish/facerec ##
+## Supports non-integer labels ##
+
 # facerec #
 
 ## facerec/py/facerec ##
