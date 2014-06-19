@@ -1,6 +1,6 @@
 
-## Modified fork from bytefish/facerec ##
-## Supports non-integer labels ##
+### Modified fork from bytefish/facerec ###
+### Supports non-integer labels ###
 
 # facerec #
 
